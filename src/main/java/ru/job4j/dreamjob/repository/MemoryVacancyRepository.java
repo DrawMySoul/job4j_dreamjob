@@ -20,12 +20,12 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private final Map<Integer, Vacancy> vacancies = new ConcurrentHashMap<>();
 
     private MemoryVacancyRepository() {
-        save(new Vacancy(0, "Intern Java Developer", "Description Intern Java Developer", LocalDateTime.now(), true, 1));
-        save(new Vacancy(0, "Junior Java Developer", "Description Junior Java Developer", LocalDateTime.now(), true, 2));
-        save(new Vacancy(0, "Junior+ Java Developer", "Description Junior+ Java Developer", LocalDateTime.now(), true, 2));
-        save(new Vacancy(0, "Middle Java Developer", "Description Middle Java Developer", LocalDateTime.now(), true, 3));
-        save(new Vacancy(0, "Middle+ Java Developer", "Description Middle+ Java Developer", LocalDateTime.now(), true, 3));
-        save(new Vacancy(0, "Senior Java Developer", "Description Senior Java Developer", LocalDateTime.now(), true, 3));
+        save(new Vacancy(0, "Intern Java Developer", "Description Intern Java Developer", LocalDateTime.now(), true, 1, 0));
+        save(new Vacancy(0, "Junior Java Developer", "Description Junior Java Developer", LocalDateTime.now(), true, 2, 0));
+        save(new Vacancy(0, "Junior+ Java Developer", "Description Junior+ Java Developer", LocalDateTime.now(), true, 2, 0));
+        save(new Vacancy(0, "Middle Java Developer", "Description Middle Java Developer", LocalDateTime.now(), true, 3, 0));
+        save(new Vacancy(0, "Middle+ Java Developer", "Description Middle+ Java Developer", LocalDateTime.now(), true, 3, 0));
+        save(new Vacancy(0, "Senior Java Developer", "Description Senior Java Developer", LocalDateTime.now(), true, 3, 0));
     }
 
     @Override
@@ -49,7 +49,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
                 vacancy.getDescription(),
                 vacancy.getCreationDate(),
                 vacancy.getVisible(),
-                vacancy.getCityId()
+                vacancy.getCityId(),
+                vacancy.getFileId()
             )
         ) != null;
     }
