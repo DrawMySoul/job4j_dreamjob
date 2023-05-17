@@ -17,12 +17,15 @@
         <div class="container">
             <a class="navbar-brand" href="/">Job4j DreamJob</a>
             <div class="collapse navbar-collapse">
-                <div class="navbar-nav">
+                <div class="navbar-nav me-auto">
                     <a class="nav-item nav-link" href="/">Главная</a>
                     <a class="nav-item nav-link" th:href="@{/vacancies}">Вакансии</a>
                     <a class="nav-item nav-link" th:href="@{/candidates}">Кандидаты</a>
                     <a class="nav-item nav-link" th:href="@{/vacancies/create}">Создать вакансию</a>
                     <a class="nav-item nav-link" th:href="@{/candidates/create}">Создать резюме</a>
+                </div>
+                <div class="d-flex">
+                    <a class="nav-link text-secondary" th:href="@{/users/register}">Регистрация</a>
                 </div>
             </div>
         </div>
@@ -51,26 +54,12 @@
                             <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}" th:field="*{cityId}" th:selected="${city.id==cityId}"></option>
                         </select>
                     </div>
-                    <!--<div class="form-check mb-3">
-                        <input type="checkbox" name="visible" class="form-check-input" id="visible" th:field="*{visible}">
-                        <label class="form-check-label" for="visible">Опубликовать</label>
-                    </div>-->
                 </div>
             </div>
-            <!--<div class="mb-3">
-                <label for="title" class="form-label"><b>Название</b></label>
-                <input type="text" class="form-control" id="title" name="name" th:field="*{name}" placeholder="Желаемая должность, например, Junior Java разработчик">
-            </div>-->
             <div class="mb-3">
                 <label for="description" class="form-label"><b>Описание</b></label>
                 <textarea class="form-control" id="description" name="description" th:field="*{description}" rows="25" placeholder="Расскажите о себе и своем опыте"></textarea>
             </div>
-            <!--<div class="mb-3">
-                <label for="city"><b>Город</b></label>
-                <select class="form-control" id="city" name="cityId">
-                    <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}" th:field="*{cityId}" th:selected="${city.id==cityId}"></option>
-                </select>
-            </div>-->
             <div class="mb-3 row">
                 <div class="col-6"></div>
                 <div class="col-6">
