@@ -37,7 +37,7 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generatedId);
             return Optional.of(user);
         } catch (Sql2oException e) {
-            LOG.debug("User with this email already exists", e);
+            LOG.error("User with this email already exists", e);
         }
         return Optional.empty();
     }
